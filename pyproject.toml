@@ -1,0 +1,24 @@
+[project]
+name = "qlora-kit"
+version = "0.1.0"
+description = "Guards and helpers for QLoRA fine-tuning a large model on a single GPU: VRAM gating, resume without the hang, checkpoint repair."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "CastelDazur" }]
+keywords = ["qlora", "lora", "fine-tuning", "peft", "vram", "local-ai", "single-gpu"]
+dependencies = []
+
+[project.optional-dependencies]
+# The reference trainer needs these; the guard helpers do not.
+train = ["transformers", "peft", "bitsandbytes", "torch", "datasets", "accelerate"]
+
+[project.urls]
+Homepage = "https://github.com/CastelDazur/qlora-single-gpu-playbook"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["qlora_kit"]
